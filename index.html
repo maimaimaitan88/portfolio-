@@ -4,7 +4,296 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>笹田　麻衣 | SNS運用 × デザイン Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link href<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>笹田 麻衣 | SNS運用 × 売れるデザイン</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink:#FF6B9D;
+  --dark:#2D1B2E;
+  --light:#FFFAF8;
+}
+
+body{
+  font-family:'Zen Maru Gothic',sans-serif;
+  margin:0;
+  background:var(--light);
+  color:var(--dark);
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:10px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#fff;
+  padding:8px 16px;
+  border-radius:30px;
+  display:flex;
+  gap:16px;
+  z-index:100;
+}
+nav a{
+  font-size:12px;
+  text-decoration:none;
+  color:#888;
+}
+nav a:hover{color:var(--pink);}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px;
+}
+
+.hero h1{
+  font-size:60px;
+  margin:0;
+}
+
+.hero p{
+  margin-top:20px;
+  line-height:1.8;
+}
+
+.hero strong{
+  color:var(--pink);
+}
+
+.hero-cta{
+  margin-top:30px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.cta-main{
+  background:var(--pink);
+  color:#fff;
+  padding:14px 28px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:700;
+}
+
+.cta-sub{
+  border:2px solid var(--pink);
+  padding:14px 28px;
+  border-radius:40px;
+  text-decoration:none;
+  color:var(--pink);
+  font-weight:700;
+}
+
+/* SECTION */
+section{
+  max-width:900px;
+  margin:0 auto;
+  padding:80px 20px;
+}
+
+h2{
+  font-size:32px;
+  margin-bottom:30px;
+}
+
+/* WORKS */
+.works{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.work{
+  background:#fff;
+  padding:20px;
+  border-radius:16px;
+  border:1px solid #eee;
+}
+
+.work img{
+  width:100%;
+  border-radius:10px;
+}
+
+.meta{
+  font-size:13px;
+  margin-top:10px;
+  color:#666;
+}
+
+/* SERVICE */
+.service{
+  display:grid;
+  gap:16px;
+}
+
+.service-item{
+  background:#fff;
+  padding:20px;
+  border-radius:16px;
+  border:1px solid #eee;
+}
+
+/* CONTACT */
+.contact{
+  text-align:center;
+}
+
+.btn{
+  display:inline-block;
+  background:var(--pink);
+  color:#fff;
+  padding:14px 30px;
+  border-radius:40px;
+  text-decoration:none;
+  margin-top:20px;
+}
+
+/* ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(20px);
+  transition:0.6s;
+}
+.fade.show{
+  opacity:1;
+  transform:none;
+}
+
+@media(max-width:600px){
+  .works{grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#about">About</a>
+<a href="#works">Works</a>
+<a href="#service">Service</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+<h1>笹田 麻衣</h1>
+
+<p>
+SNS運用 × デザイン × コンテンツ制作<br>
+<strong>来店・売上に繋げる導線設計ができます</strong>
+</p>
+
+<div class="hero-cta">
+<a href="#contact" class="cta-main">無料で相談する</a>
+<a href="#works" class="cta-sub">制作実績を見る</a>
+</div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>実績</h2>
+<p>
+TikTok最大18.4万再生 / 保存728件 / 来店増加<br>
+実店舗の売上改善に貢献
+</p>
+</section>
+
+<!-- WORKS -->
+<section id="works">
+<h2>制作実績</h2>
+
+<div class="works">
+
+<div class="work fade">
+<img src="lp-korea.png">
+<h3>韓国お菓子LP</h3>
+<p>情報整理と購買導線を意識したLP</p>
+<div class="meta">
+課題：売上に繋がらない<br>
+施策：構成改善＋視線誘導<br>
+工夫：Z型レイアウト設計
+</div>
+</div>
+
+<div class="work fade">
+<img src="banner-candy.jpeg">
+<h3>SNSバナー</h3>
+<p>視認性とクリック率を意識</p>
+<div class="meta">
+課題：クリックされない<br>
+施策：色と配置改善<br>
+工夫：一瞬で内容理解できる構成
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- SERVICE -->
+<section id="service">
+<h2>できること</h2>
+
+<div class="service">
+<div class="service-item">
+<h3>SNS運用代行</h3>
+<p>企画・撮影・投稿・分析まで対応</p>
+</div>
+
+<div class="service-item">
+<h3>バナー・LP制作</h3>
+<p>売れる構成からデザインまで</p>
+</div>
+
+<div class="service-item">
+<h3>改善提案</h3>
+<p>既存SNSの分析と改善</p>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+<h2>お問い合わせ</h2>
+
+<p>
+週3〜4日対応可能<br>
+Photoshop / Canva / Figma / CapCut<br>
+24時間以内返信
+</p>
+
+<a href="mailto:maimaimaitan88@gmail.com" class="btn">
+相談する
+</a>
+</section>
+
+<script>
+const fadeEls=document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+fadeEls.forEach(el=>{
+const rect=el.getBoundingClientRect();
+if(rect.top<window.innerHeight-100){
+el.classList.add('show');
+}
+});
+});
+</script>
+
+</body>
+</html>="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 <style>
   :root {
     --pink: #FF6B9D;
