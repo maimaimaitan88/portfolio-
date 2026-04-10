@@ -145,9 +145,6 @@ footer p { font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); 
 .m-desc { font-size:12px; line-height:2.0; color:#555; flex:1; }
 .m-close { margin-top:24px; background:none; border:1px solid var(--ink); padding:10px 20px; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; cursor:pointer; transition:all 0.2s; align-self:flex-start; font-family:'DM Mono',monospace; }
 .m-close:hover { background:var(--ink); color:var(--paper); }
-/* モバイルタップ時オーバーレイ表示 */
-.work.tapped .work-ov { background:rgba(17,16,16,0.82); }
-.work.tapped .work-info { opacity:1; transform:translateY(0); }
 @media(max-width:900px) {
   nav { padding:18px 24px; } .nav-links { display:none; }
   .hero { grid-template-columns:1fr; display:flex; flex-direction:column; min-height:auto; }
@@ -490,22 +487,30 @@ function openModal(i){
   }catch(e){}
 }
 
-// workカードのクリック/タップイベント
+// ===== Work カード イベント =====
+// タッチデバイス判定フラグ
+var isTouchDevice = false;
+document.addEventListener('touchstart', function(){ isTouchDevice = true; }, { once: true });
+
 document.querySelectorAll('.work').forEach(function(el){
+
+  // PC：クリックでそのままモーダルオープン
   el.addEventListener('click', function(){
+    if(isTouchDevice) return; // タッチデバイスはここをスキップ
     var idx = parseInt(el.getAttribute('data-idx'));
     if(!isNaN(idx)) openModal(idx);
   });
+
+  // モバイル：1回タップでオーバーレイ表示、2回目でモーダル
   el.addEventListener('touchend', function(e){
+    e.preventDefault(); // clickイベントの二重発火を防ぐ
     if(el.classList.contains('tapped')){
       var idx = parseInt(el.getAttribute('data-idx'));
       if(!isNaN(idx)) openModal(idx);
       el.classList.remove('tapped');
-      e.preventDefault();
     } else {
       document.querySelectorAll('.work.tapped').forEach(function(o){ o.classList.remove('tapped'); });
       el.classList.add('tapped');
-      e.preventDefault();
     }
   });
 });
